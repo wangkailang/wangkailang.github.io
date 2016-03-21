@@ -307,8 +307,17 @@
       
         
           
-            <h2 id="centos服务器上ssh配置"><a href="#centos服务器上ssh配置" class="headerlink" title="centos服务器上ssh配置"></a>centos服务器上ssh配置</h2><pre><code>yum update
-</code></pre>
+            <h2 id="centos服务器上ssh配置"><a href="#centos服务器上ssh配置" class="headerlink" title="centos服务器上ssh配置"></a>centos服务器上ssh配置</h2><h3 id="ssh安装"><a href="#ssh安装" class="headerlink" title="ssh安装"></a>ssh安装</h3><pre><code>//yum 跟新
+yum update
+
+//ssh 安装
+yum install ssh
+//启动ssh
+service sshd start
+//ssh设置为开机启动
+chkconfig sshd on
+</code></pre><p>一般默认CentOS已经安装了OpenSSH，即使你是最小化安装也是如此。</p>
+<h3 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h3>
           
         
       
