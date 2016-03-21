@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-10T09:10:04.000Z</updated>
+  <updated>2016-03-21T06:10:09.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -14,6 +14,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac centos 环境搭建</title>
+    <link href="http://wangkailang.github.io/2016/03/21/Mac-centos-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    <id>http://wangkailang.github.io/2016/03/21/Mac-centos-环境搭建/</id>
+    <published>2016-03-21T06:08:43.000Z</published>
+    <updated>2016-03-21T06:10:09.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Centos Linux" scheme="http://wangkailang.github.io/tags/Centos-Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
