@@ -335,7 +335,7 @@ postfix:x:89:89::/var/spool/postfix:/sbin/nologin
 sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
 kailang:x:1000:1000:kailang:/home/kailang:/bin/bash
 </code></pre><blockquote>
-<p>文件的每一行代表一个用户<br>每一行由冒号“：”分成7个字段，结构如下：<br>    用户名： 密码：UID：GID：用户全名：home目录：shell<br>    //密码字段统一用”x”表示<br>    //比较重要的是UID（User ID） GID（Group ID），Linux只靠它们来识别<br>    //0是root用户，1～999属于系统用户，1000～4294967295属于普通用户</p>
+<p>文件的每一行代表一个用户<br>每一行由冒号“：”分成7个字段，结构如下：<br>    <strong> 用户名： 密码：UID：GID：用户全名：home目录：shell </strong><br>          //密码字段统一用”x”表示<br>          //比较重要的是UID（User ID） GID（Group ID），Linux只靠它们来识别<br>          //0是root用户，1～999属于系统用户，1000～4294967295属于普通用户</p>
 </blockquote>
 
           
