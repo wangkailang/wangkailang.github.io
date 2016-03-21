@@ -59,23 +59,23 @@
 
 
 
-<meta name="description" content="centos服务器上ssh配置ssh安装1234567891011//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机启动chkconfig sshd on
+<meta name="description" content="centos服务器上ssh配置ssh安装ssh-install123456789//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机启动chkconfig sshd on
 一般默认CentOS已经安装了OpenSSH，即使你是最小化安装也是如此。
-ssh配置使用root登录修改配置文件：/etc/ssh/sshd">
+ssh配置使用root登录修改配置文件：/etc/s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos ssh 密钥配置">
 <meta property="og:url" content="http://wangkailang.github.io/2016/03/21/centos-ssh-密钥配置/index.html">
 <meta property="og:site_name" content="开朗的博客">
-<meta property="og:description" content="centos服务器上ssh配置ssh安装1234567891011//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机启动chkconfig sshd on
+<meta property="og:description" content="centos服务器上ssh配置ssh安装ssh-install123456789//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机启动chkconfig sshd on
 一般默认CentOS已经安装了OpenSSH，即使你是最小化安装也是如此。
-ssh配置使用root登录修改配置文件：/etc/ssh/sshd">
+ssh配置使用root登录修改配置文件：/etc/s">
 <meta property="og:image" content="http://wangkailang.github.io/uploads/centos-ssh-peizhi.png">
-<meta property="og:updated_time" content="2016-03-21T07:09:12.000Z">
+<meta property="og:updated_time" content="2016-03-21T07:11:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos ssh 密钥配置">
-<meta name="twitter:description" content="centos服务器上ssh配置ssh安装1234567891011//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机启动chkconfig sshd on
+<meta name="twitter:description" content="centos服务器上ssh配置ssh安装ssh-install123456789//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机启动chkconfig sshd on
 一般默认CentOS已经安装了OpenSSH，即使你是最小化安装也是如此。
-ssh配置使用root登录修改配置文件：/etc/ssh/sshd">
+ssh配置使用root登录修改配置文件：/etc/s">
 <meta name="twitter:image" content="http://wangkailang.github.io/uploads/centos-ssh-peizhi.png">
 
 
@@ -309,11 +309,11 @@ ssh配置使用root登录修改配置文件：/etc/ssh/sshd">
       
 
       
-        <h2 id="centos服务器上ssh配置"><a href="#centos服务器上ssh配置" class="headerlink" title="centos服务器上ssh配置"></a>centos服务器上ssh配置</h2><h3 id="ssh安装"><a href="#ssh安装" class="headerlink" title="ssh安装"></a>ssh安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//yum 跟新</span><br><span class="line">yum update</span><br><span class="line"></span><br><span class="line">//ssh 安装</span><br><span class="line">yum install ssh</span><br><span class="line">//启动ssh</span><br><span class="line">service sshd start</span><br><span class="line">//ssh设置为开机启动</span><br><span class="line">chkconfig sshd on</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <h2 id="centos服务器上ssh配置"><a href="#centos服务器上ssh配置" class="headerlink" title="centos服务器上ssh配置"></a>centos服务器上ssh配置</h2><h3 id="ssh安装"><a href="#ssh安装" class="headerlink" title="ssh安装"></a>ssh安装</h3><figure class="highlight plain"><figcaption><span>ssh-install</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//yum 跟新</span><br><span class="line">yum update</span><br><span class="line"></span><br><span class="line">//ssh 安装</span><br><span class="line">yum install ssh</span><br><span class="line">//启动ssh</span><br><span class="line">service sshd start</span><br><span class="line">//ssh设置为开机启动</span><br><span class="line">chkconfig sshd on</span><br></pre></td></tr></table></figure>
 <p>一般默认CentOS已经安装了OpenSSH，即使你是最小化安装也是如此。</p>
 <h3 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h3><p>使用root登录修改配置文件：/etc/ssh/sshd_config，根据红色框内示例修改，如下：</p>
  <img src="/uploads/centos-ssh-peizhi.png" class="full-image" title="centos ssh配置图片">
-<h3 id="生成密钥对"><a href="#生成密钥对" class="headerlink" title="生成密钥对"></a>生成密钥对</h3><p>本地操作生成密钥对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h3 id="生成密钥对"><a href="#生成密钥对" class="headerlink" title="生成密钥对"></a>生成密钥对</h3><p>本地操作生成密钥对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
