@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-21T06:18:26.000Z</updated>
+  <updated>2016-03-21T06:25:40.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -16,18 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>centos ssh 密钥配置</title>
+    <link href="http://wangkailang.github.io/2016/03/21/centos-ssh-%E5%AF%86%E9%92%A5%E9%85%8D%E7%BD%AE/"/>
+    <id>http://wangkailang.github.io/2016/03/21/centos-ssh-密钥配置/</id>
+    <published>2016-03-21T06:23:37.000Z</published>
+    <updated>2016-03-21T06:25:40.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;centos服务器上ssh配置&quot;&gt;&lt;a href=&quot;#centos服务器上ssh配置&quot; class=&quot;headerlink&quot; title=&quot;centos服务器上ssh配置&quot;&gt;&lt;/a&gt;centos服务器上ssh配置&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;yum update
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;centos服务器上ssh配置&quot;&gt;&lt;a href=&quot;#centos服务器上ssh配置&quot; class=&quot;headerlink&quot; title=&quot;centos服务器上ssh配置&quot;&gt;&lt;/a&gt;centos服务器上ssh配置&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;yum update
+    
+    </summary>
+    
+      <category term="Centos Linux" scheme="http://wangkailang.github.io/categories/Centos-Linux/"/>
+    
+    
+      <category term="Centos, ssh" scheme="http://wangkailang.github.io/tags/Centos-ssh/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Mac centos 环境搭建</title>
     <link href="http://wangkailang.github.io/2016/03/21/Mac-centos-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://wangkailang.github.io/2016/03/21/Mac-centos-环境搭建/</id>
     <published>2016-03-21T06:08:43.000Z</published>
-    <updated>2016-03-21T06:18:26.000Z</updated>
+    <updated>2016-03-21T06:24:15.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;基本软件选择&quot;&gt;&lt;a href=&quot;#基本软件选择&quot; class=&quot;headerlink&quot; title=&quot;基本软件选择&quot;&gt;&lt;/a&gt;基本软件选择&lt;/h2&gt;&lt;p&gt;VirtualBox ＋ CentOS-7-x86_64-Minimal-1511.iso&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;软件选择&quot;&gt;&lt;a href=&quot;#软件选择&quot; class=&quot;headerlink&quot; title=&quot;软件选择&quot;&gt;&lt;/a&gt;软件选择&lt;/h2&gt;&lt;p&gt;VirtualBox ＋ CentOS-7-x86_64-Minimal-1511.iso&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;基本软件选择&quot;&gt;&lt;a href=&quot;#基本软件选择&quot; class=&quot;headerlink&quot; title=&quot;基本软件选择&quot;&gt;&lt;/a&gt;基本软件选择&lt;/h2&gt;&lt;p&gt;VirtualBox ＋ CentOS-7-x86_64-Minimal-1511.iso&lt;/p&gt;
+      &lt;h2 id=&quot;软件选择&quot;&gt;&lt;a href=&quot;#软件选择&quot; class=&quot;headerlink&quot; title=&quot;软件选择&quot;&gt;&lt;/a&gt;软件选择&lt;/h2&gt;&lt;p&gt;VirtualBox ＋ CentOS-7-x86_64-Minimal-1511.iso&lt;/p&gt;
 
     
     </summary>
@@ -35,7 +58,7 @@
       <category term="Centos Linux" scheme="http://wangkailang.github.io/categories/Centos-Linux/"/>
     
     
-      <category term="Centos,mac上搭建linux环境" scheme="http://wangkailang.github.io/tags/Centos-mac%E4%B8%8A%E6%90%AD%E5%BB%BAlinux%E7%8E%AF%E5%A2%83/"/>
+      <category term="Centos, mac上搭建linux环境" scheme="http://wangkailang.github.io/tags/Centos-mac%E4%B8%8A%E6%90%AD%E5%BB%BAlinux%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   
