@@ -306,8 +306,7 @@
 
       
         
-          
-            <h2 id="Linux是多用户多任务分时操作系统"><a href="#Linux是多用户多任务分时操作系统" class="headerlink" title="Linux是多用户多任务分时操作系统"></a>Linux是多用户多任务分时操作系统</h2><p>Linux中有些用户是用来完成特定任务的(称之为用户组)</p>
+          <h2 id="Linux是多用户多任务分时操作系统"><a href="#Linux是多用户多任务分时操作系统" class="headerlink" title="Linux是多用户多任务分时操作系统"></a>Linux是多用户多任务分时操作系统</h2><p>Linux中有些用户是用来完成特定任务的(称之为用户组)</p>
 <blockquote>
 <p>nobody admin, ftp</p>
 </blockquote>
@@ -335,10 +334,13 @@ postfix:x:89:89::/var/spool/postfix:/sbin/nologin
 sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
 kailang:x:1000:1000:kailang:/home/kailang:/bin/bash
 </code></pre><blockquote>
-<p>文件的每一行代表一个用户<br>每一行由冒号“：”分成7个字段，结构如下：<br>    <strong> 用户名： 密码：UID：GID：用户全名：home目录：shell </strong><br>          //密码字段统一用”x”表示<br>          //比较重要的是UID（User ID） GID（Group ID），Linux只靠它们来识别<br>          //0是root用户，1～999属于系统用户，1000～4294967295属于普通用户</p>
+<p>文件的每一行代表一个用户<br>每一行由冒号“：”分成7个字段，结构如下：<br>  <strong> 用户名： 密码：UID：GID：用户全名：home目录：shell </strong><br>        //密码字段统一用”x”表示<br>        //比较重要的是UID（User ID） GID（Group ID），Linux只靠它们来识别<br>        //0是root用户，1～999属于系统用户，1000～4294967295属于普通用户</p>
 </blockquote>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/21/linux常用指令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

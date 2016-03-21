@@ -79,7 +79,9 @@ man 联机获取指令帮助/etc/passwd文件查看用户存放用户基本信�
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin
 daemon:x:2:2:daemon:/s">
-<meta property="og:updated_time" content="2016-03-21T10:05:38.000Z">
+<meta property="og:image" content="http://wangkailang.github.io/uploads/linux－li.png">
+<meta property="og:image" content="http://wangkailang.github.io/uploads/linux-quanxian.png">
+<meta property="og:updated_time" content="2016-03-21T10:35:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常识">
 <meta name="twitter:description" content="Linux是多用户多任务分时操作系统Linux中有些用户是用来完成特定任务的(称之为用户组)
@@ -90,6 +92,7 @@ man 联机获取指令帮助/etc/passwd文件查看用户存放用户基本信�
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin
 daemon:x:2:2:daemon:/s">
+<meta name="twitter:image" content="http://wangkailang.github.io/uploads/linux－li.png">
 
 
 
@@ -350,8 +353,16 @@ postfix:x:89:89::/var/spool/postfix:/sbin/nologin
 sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
 kailang:x:1000:1000:kailang:/home/kailang:/bin/bash
 </code></pre><blockquote>
-<p>文件的每一行代表一个用户<br>每一行由冒号“：”分成7个字段，结构如下：<br>    <strong> 用户名： 密码：UID：GID：用户全名：home目录：shell </strong><br>          //密码字段统一用”x”表示<br>          //比较重要的是UID（User ID） GID（Group ID），Linux只靠它们来识别<br>          //0是root用户，1～999属于系统用户，1000～4294967295属于普通用户</p>
+<p>文件的每一行代表一个用户<br>每一行由冒号“：”分成7个字段，结构如下：<br>  <strong> 用户名： 密码：UID：GID：用户全名：home目录：shell </strong><br>        //密码字段统一用”x”表示<br>        //比较重要的是UID（User ID） GID（Group ID），Linux只靠它们来识别<br>        //0是root用户，1～999属于系统用户，1000～4294967295属于普通用户</p>
 </blockquote>
+<a id="more"></a>
+<h2 id="etc-group文件查看组"><a href="#etc-group文件查看组" class="headerlink" title="/etc/group文件查看组"></a>/etc/group文件查看组</h2><p>跟用户组有关的文件，文件内容如下<br>    bin:x:1:<br>    daemon:x:2:<br>    sys:x:3:<br>    adm:x:4:<br>    tty:x:5:<br>    disk:x:6:<br>    lp:x:7:<br>    mem:x:8:<br>    kmem:x:9:<br>    wheel:x:10:<br>    cdrom:x:11:<br>    mail:x:12:postfix<br>    man:x:15:<br>    dialout:x:18:<br>    floppy:x:19:<br>    games:x:20:<br>    tape:x:30:<br>    video:x:39:<br>    ftp:x:50:<br>    lock:x:54:<br>    audio:x:63:<br>    nobody:x:99:<br>    users:x:100:<br>    utmp:x:22:<br>    utempter:x:35:<br>    ssh_keys:x:999:<br>    avahi-autoipd:x:170:<br>    input:x:998:<br>    systemd-journal:x:190:<br>    systemd-bus-proxy:x:997:<br>    systemd-network:x:996:<br>    dbus:x:81:<br>    polkitd:x:995:<br>    dip:x:40:<br>    tss:x:59:<br>    postdrop:x:90:<br>    postfix:x:89:<br>    sshd:x:74:<br>    kailang:x:1000:kailang</p>
+<blockquote>
+<p>每一行代表一个用户组<br>被冒号分成四个字段，分别表示<br><strong> 组名：用户组密码：GID：用户组内的用户名 </strong>   </p>
+</blockquote>
+<h2 id="etc-shadow专门管理密码"><a href="#etc-shadow专门管理密码" class="headerlink" title="/etc/shadow专门管理密码"></a>/etc/shadow专门管理密码</h2><h2 id="管理用户和组"><a href="#管理用户和组" class="headerlink" title="管理用户和组"></a>管理用户和组</h2><p>Linux为用户的增，删，改提供了基本的命令，实际上就是对上面的文件进行了修改。</p>
+<p>Linux添加新用户<br>    useradd “新用户”</p>
+<h2 id="文件属性和权限"><a href="#文件属性和权限" class="headerlink" title="文件属性和权限"></a>文件属性和权限</h2><p>使用ls的-l命令<br> <img src="/uploads/linux－li.png" class="full-image" title="li -l指令结构图片"><br><img src="/uploads/linux-quanxian.png" class="full-image" title="权限分析图片">    </p>
 
       
     </div>
@@ -535,7 +546,7 @@ kailang:x:1000:1000:kailang:/home/kailang:/bin/bash
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux是多用户多任务分时操作系统"><span class="nav-number">1.</span> <span class="nav-text">Linux是多用户多任务分时操作系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#man-联机获取指令帮助"><span class="nav-number">2.</span> <span class="nav-text">man 联机获取指令帮助</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#etc-passwd文件查看用户"><span class="nav-number">3.</span> <span class="nav-text">/etc/passwd文件查看用户</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux是多用户多任务分时操作系统"><span class="nav-number">1.</span> <span class="nav-text">Linux是多用户多任务分时操作系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#man-联机获取指令帮助"><span class="nav-number">2.</span> <span class="nav-text">man 联机获取指令帮助</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#etc-passwd文件查看用户"><span class="nav-number">3.</span> <span class="nav-text">/etc/passwd文件查看用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#etc-group文件查看组"><span class="nav-number">4.</span> <span class="nav-text">/etc/group文件查看组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#etc-shadow专门管理密码"><span class="nav-number">5.</span> <span class="nav-text">/etc/shadow专门管理密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管理用户和组"><span class="nav-number">6.</span> <span class="nav-text">管理用户和组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件属性和权限"><span class="nav-number">7.</span> <span class="nav-text">文件属性和权限</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
