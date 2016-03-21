@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-21T08:21:55.000Z</updated>
+  <updated>2016-03-21T10:04:11.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux常识</title>
+    <link href="http://wangkailang.github.io/2016/03/21/linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
+    <id>http://wangkailang.github.io/2016/03/21/linux常用指令/</id>
+    <published>2016-03-21T09:43:25.000Z</published>
+    <updated>2016-03-21T10:04:11.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Linux是多用户多任务分时操作系统&quot;&gt;&lt;a href=&quot;#Linux是多用户多任务分时操作系统&quot; class=&quot;headerlink&quot; title=&quot;Linux是多用户多任务分时操作系统&quot;&gt;&lt;/a&gt;Linux是多用户多任务分时操作系统&lt;/h2&gt;&lt;p&gt;Linux中有些用户是用来完成特定任务的(称之为用户组)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;nobody admin, ftp&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;man-联机获取指令帮助&quot;&gt;&lt;a href=&quot;#man-联机获取指令帮助&quot; class=&quot;headerlink&quot; title=&quot;man 联机获取指令帮助&quot;&gt;&lt;/a&gt;man 联机获取指令帮助&lt;/h2&gt;&lt;h2 id=&quot;etc-passwd文件查看用户&quot;&gt;&lt;a href=&quot;#etc-passwd文件查看用户&quot; class=&quot;headerlink&quot; title=&quot;/etc/passwd文件查看用户&quot;&gt;&lt;/a&gt;/etc/passwd文件查看用户&lt;/h2&gt;&lt;p&gt;存放用户基本信息，文件内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+avahi-autoipd:x:170:170:Avahi IPv4LL Stack:/var/lib/avahi-autoipd:/sbin/nologin
+systemd-bus-proxy:x:999:997:systemd Bus Proxy:/:/sbin/nologin
+systemd-network:x:998:996:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:997:995:User for polkitd:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+kailang:x:1000:1000:kailang:/home/kailang:/bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;文件的每一行代表一个用户&lt;br&gt;每一行由冒号“：”分成7个字段，结构如下：&lt;br&gt;    用户名： 密码：UID：GID：用户全名：home目录：shell&lt;br&gt;    //密码字段统一用”x”表示&lt;br&gt;    //比较重要的是UID（User ID） GID（Group ID），Linux只靠它们来识别&lt;br&gt;    //0是root用户，1～999属于系统用户，1000～4294967295属于普通用户&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Linux是多用户多任务分时操作系统&quot;&gt;&lt;a href=&quot;#Linux是多用户多任务分时操作系统&quot; class=&quot;headerlink&quot; title=&quot;Linux是多用户多任务分时操作系统&quot;&gt;&lt;/a&gt;Linux是多用户多任务分时操作系统&lt;/h2&gt;&lt;p&gt;Linux中
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://wangkailang.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux常识" scheme="http://wangkailang.github.io/tags/Linux%E5%B8%B8%E8%AF%86/"/>
+    
+  </entry>
   
   <entry>
     <title>centos ssh 配置</title>
@@ -59,12 +111,12 @@
     <link href="http://wangkailang.github.io/2016/03/21/Mac-centos-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://wangkailang.github.io/2016/03/21/Mac-centos-环境搭建/</id>
     <published>2016-03-21T06:08:43.000Z</published>
-    <updated>2016-03-21T08:36:19.000Z</updated>
+    <updated>2016-03-21T09:43:35.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;软件选择&quot;&gt;&lt;a href=&quot;#软件选择&quot; class=&quot;headerlink&quot; title=&quot;软件选择&quot;&gt;&lt;/a&gt;软件选择&lt;/h2&gt;&lt;p&gt;VirtualBox ＋ CentOS-7-x86_64-Minimal-1511.iso&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;//查看centos版本
 rpm -q centos-release
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;centos 常用yum源&lt;br&gt;&lt;a href=&quot;https://blog.itnmg.net/centos-yum-source/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://blog.itnmg.net/centos-yum-source/&lt;/a&gt;&lt;br&gt;这里介绍几个源, Remi, RPMforge , EPEL,  CentALT , webtatic , Nginx 如果你是使用的国内主机, 建议添加国内源, 如网易, 搜狐,中科大,中移动等等.    &lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;centos 常用yum源&lt;br&gt;&lt;a href=&quot;https://blog.itnmg.net/centos-yum-source/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://blog.itnmg.net/centos-yum-source/&lt;/a&gt;&lt;br&gt;这里介绍几个源, Remi, RPMforge , EPEL,  CentALT , webtatic , Nginx 如果你是使用的国内主机, 建议添加国内源, 如网易, 搜狐,中科大,中移动等等.&lt;/p&gt;
 </content>
     
     <summary type="html">
