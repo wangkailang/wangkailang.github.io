@@ -59,20 +59,20 @@
 
 
 
-<meta name="description" content="配置文件 在/etc/ssh/目录下有ssh_config和sshd_config，ssd_config是客服端配置文件sshd_config是服务端配置文件。
-centos服务器上ssh基本环境ssh安装ssh-install123456789//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机启">
+<meta name="description" content="配置文件 在/etc/ssh/目录下有ssh_config和sshd_config，ssd_config是客服端配置文件，sshd_config是服务端配置文件。
+centos服务器上ssh基本环境ssh安装ssh-install123456789//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos ssh 配置">
 <meta property="og:url" content="http://wangkailang.github.io/2016/03/21/centos-ssh-密钥配置/index.html">
 <meta property="og:site_name" content="开朗的博客">
-<meta property="og:description" content="配置文件 在/etc/ssh/目录下有ssh_config和sshd_config，ssd_config是客服端配置文件sshd_config是服务端配置文件。
-centos服务器上ssh基本环境ssh安装ssh-install123456789//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机启">
+<meta property="og:description" content="配置文件 在/etc/ssh/目录下有ssh_config和sshd_config，ssd_config是客服端配置文件，sshd_config是服务端配置文件。
+centos服务器上ssh基本环境ssh安装ssh-install123456789//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机">
 <meta property="og:image" content="http://wangkailang.github.io/uploads/centos-ssh-peizhi.png">
-<meta property="og:updated_time" content="2016-03-21T07:32:07.000Z">
+<meta property="og:updated_time" content="2016-03-21T07:41:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos ssh 配置">
-<meta name="twitter:description" content="配置文件 在/etc/ssh/目录下有ssh_config和sshd_config，ssd_config是客服端配置文件sshd_config是服务端配置文件。
-centos服务器上ssh基本环境ssh安装ssh-install123456789//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机启">
+<meta name="twitter:description" content="配置文件 在/etc/ssh/目录下有ssh_config和sshd_config，ssd_config是客服端配置文件，sshd_config是服务端配置文件。
+centos服务器上ssh基本环境ssh安装ssh-install123456789//yum 跟新yum update//ssh 安装yum install ssh//启动sshservice sshd start//ssh设置为开机">
 <meta name="twitter:image" content="http://wangkailang.github.io/uploads/centos-ssh-peizhi.png">
 
 
@@ -230,7 +230,7 @@ centos服务器上ssh基本环境ssh安装ssh-install123456789//yum 跟新yum up
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
 
     
       <header class="post-header">
@@ -306,7 +306,7 @@ centos服务器上ssh基本环境ssh安装ssh-install123456789//yum 跟新yum up
       
 
       
-        <p>配置文件 在/etc/ssh/目录下有ssh_config和sshd_config，ssd_config是客服端配置文件sshd_config是服务端配置文件。</p>
+        <p>配置文件 在/etc/ssh/目录下有ssh_config和sshd_config，ssd_config是客服端配置文件，sshd_config是服务端配置文件。</p>
 <h2 id="centos服务器上ssh基本环境"><a href="#centos服务器上ssh基本环境" class="headerlink" title="centos服务器上ssh基本环境"></a>centos服务器上ssh基本环境</h2><h3 id="ssh安装"><a href="#ssh安装" class="headerlink" title="ssh安装"></a>ssh安装</h3><figure class="highlight plain"><figcaption><span>ssh-install</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//yum 跟新</span><br><span class="line">yum update</span><br><span class="line"></span><br><span class="line">//ssh 安装</span><br><span class="line">yum install ssh</span><br><span class="line">//启动ssh</span><br><span class="line">service sshd start</span><br><span class="line">//ssh设置为开机启动</span><br><span class="line">chkconfig sshd on</span><br></pre></td></tr></table></figure>
 <p>一般默认CentOS已经安装了OpenSSH，即使你是最小化安装也是如此。</p>
 <h3 id="ssh配置"><a href="#ssh配置" class="headerlink" title="ssh配置"></a>ssh配置</h3><p>使用root登录修改配置文件：/etc/ssh/sshd_config，根据红色框内示例修改，如下：</p>
@@ -314,7 +314,7 @@ centos服务器上ssh基本环境ssh安装ssh-install123456789//yum 跟新yum up
 <h2 id="密钥生成与使用"><a href="#密钥生成与使用" class="headerlink" title="密钥生成与使用"></a>密钥生成与使用</h2><h3 id="生成密钥对"><a href="#生成密钥对" class="headerlink" title="生成密钥对"></a>生成密钥对</h3><p>本地操作生成密钥对<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br><span class="line">//根据提示完成</span><br></pre></td></tr></table></figure><br>得到两个文件，id_rsa 是私钥，id_rsa.pub 是公钥。</p>
 <h3 id="上传公钥到给服务器"><a href="#上传公钥到给服务器" class="headerlink" title="上传公钥到给服务器"></a>上传公钥到给服务器</h3><p>找到服务器ip，上传公钥到服务器指定目录文件，重启sshd。<br>服务器端：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//查看ip</span><br><span class="line">ifconfig</span><br><span class="line">//若ifconfig失效</span><br><span class="line">yum install net-tools</span><br></pre></td></tr></table></figure></p>
 <p>本地：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//上床公钥</span><br><span class="line">//scp [本地公钥位置] [服务器指定文件名称和文件位置]</span><br><span class="line">scp [....]/.ssh/id_rsa.pub root@[服务器ip]:/etc/ssh/authorized.keys</span><br></pre></td></tr></table></figure></p>
-<p>重启sshd，即可通过ssh远程登录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service sshd restart</span><br></pre></td></tr></table></figure></p>
+<p>重启sshd，即可通过ssh远程登录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//修改上传文件权限</span><br><span class="line">chmod 644 authorized_keys</span><br><span class="line">service sshd restart</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -433,7 +433,7 @@ centos服务器上ssh基本环境ssh安装ssh-install123456789//yum 跟新yum up
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
