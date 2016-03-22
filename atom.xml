@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-22T03:02:55.000Z</updated>
+  <updated>2016-03-22T03:07:38.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://wangkailang.github.io/2016/03/21/linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
     <id>http://wangkailang.github.io/2016/03/21/linux常用指令/</id>
     <published>2016-03-21T09:43:25.000Z</published>
-    <updated>2016-03-22T03:02:55.000Z</updated>
+    <updated>2016-03-22T03:07:38.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Linux是多用户多任务分时操作系统&quot;&gt;&lt;a href=&quot;#Linux是多用户多任务分时操作系统&quot; class=&quot;headerlink&quot; title=&quot;Linux是多用户多任务分时操作系统&quot;&gt;&lt;/a&gt;Linux是多用户多任务分时操作系统&lt;/h2&gt;&lt;p&gt;Linux中有些用户是用来完成特定任务的(称之为用户组)&lt;/p&gt;
 &lt;blockquote&gt;
@@ -53,13 +53,52 @@ kailang:x:1000:1000:kailang:/home/kailang:/bin/bash
 &lt;p&gt;文件的每一行代表一个用户&lt;br&gt;每一行由冒号“：”分成7个字段，结构如下：&lt;br&gt;  &lt;strong&gt; 用户名： 密码：UID：GID：用户全名：home目录：shell &lt;/strong&gt;&lt;br&gt;        //密码字段统一用”x”表示&lt;br&gt;        //比较重要的是UID（User ID） GID（Group ID），Linux只靠它们来识别&lt;br&gt;        //0是root用户，1～999属于系统用户，1000～4294967295属于普通用户&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;etc-group文件查看组&quot;&gt;&lt;a href=&quot;#etc-group文件查看组&quot; class=&quot;headerlink&quot; title=&quot;/etc/group文件查看组&quot;&gt;&lt;/a&gt;/etc/group文件查看组&lt;/h2&gt;&lt;p&gt;跟用户组有关的文件，文件内容如下&lt;br&gt;    bin:x:1:&lt;br&gt;    daemon:x:2:&lt;br&gt;    sys:x:3:&lt;br&gt;    adm:x:4:&lt;br&gt;    tty:x:5:&lt;br&gt;    disk:x:6:&lt;br&gt;    lp:x:7:&lt;br&gt;    mem:x:8:&lt;br&gt;    kmem:x:9:&lt;br&gt;    wheel:x:10:&lt;br&gt;    cdrom:x:11:&lt;br&gt;    mail:x:12:postfix&lt;br&gt;    man:x:15:&lt;br&gt;    dialout:x:18:&lt;br&gt;    floppy:x:19:&lt;br&gt;    games:x:20:&lt;br&gt;    tape:x:30:&lt;br&gt;    video:x:39:&lt;br&gt;    ftp:x:50:&lt;br&gt;    lock:x:54:&lt;br&gt;    audio:x:63:&lt;br&gt;    nobody:x:99:&lt;br&gt;    users:x:100:&lt;br&gt;    utmp:x:22:&lt;br&gt;    utempter:x:35:&lt;br&gt;    ssh_keys:x:999:&lt;br&gt;    avahi-autoipd:x:170:&lt;br&gt;    input:x:998:&lt;br&gt;    systemd-journal:x:190:&lt;br&gt;    systemd-bus-proxy:x:997:&lt;br&gt;    systemd-network:x:996:&lt;br&gt;    dbus:x:81:&lt;br&gt;    polkitd:x:995:&lt;br&gt;    dip:x:40:&lt;br&gt;    tss:x:59:&lt;br&gt;    postdrop:x:90:&lt;br&gt;    postfix:x:89:&lt;br&gt;    sshd:x:74:&lt;br&gt;    kailang:x:1000:kailang&lt;/p&gt;
-&lt;blockquote&gt;
+&lt;h2 id=&quot;etc-group文件查看组&quot;&gt;&lt;a href=&quot;#etc-group文件查看组&quot; class=&quot;headerlink&quot; title=&quot;/etc/group文件查看组&quot;&gt;&lt;/a&gt;/etc/group文件查看组&lt;/h2&gt;&lt;p&gt;跟用户组有关的文件，文件内容如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:
+cdrom:x:11:
+mail:x:12:postfix
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:30:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+nobody:x:99:
+users:x:100:
+utmp:x:22:
+utempter:x:35:
+ssh_keys:x:999:
+avahi-autoipd:x:170:
+input:x:998:
+systemd-journal:x:190:
+systemd-bus-proxy:x:997:
+systemd-network:x:996:
+dbus:x:81:
+polkitd:x:995:
+dip:x:40:
+tss:x:59:
+postdrop:x:90:
+postfix:x:89:
+sshd:x:74:
+kailang:x:1000:kailang
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;每一行代表一个用户组&lt;br&gt;被冒号分成四个字段，分别表示&lt;br&gt;&lt;strong&gt; 组名：用户组密码：GID：用户组内的用户名 &lt;/strong&gt;   &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;etc-shadow专门管理密码&quot;&gt;&lt;a href=&quot;#etc-shadow专门管理密码&quot; class=&quot;headerlink&quot; title=&quot;/etc/shadow专门管理密码&quot;&gt;&lt;/a&gt;/etc/shadow专门管理密码&lt;/h2&gt;&lt;h2 id=&quot;管理用户和组&quot;&gt;&lt;a href=&quot;#管理用户和组&quot; class=&quot;headerlink&quot; title=&quot;管理用户和组&quot;&gt;&lt;/a&gt;管理用户和组&lt;/h2&gt;&lt;p&gt;Linux为用户的增，删，改提供了基本的命令，实际上就是对上面的文件进行了修改。&lt;/p&gt;
 &lt;p&gt;Linux添加新用户&lt;br&gt;    useradd “新用户”&lt;/p&gt;
-&lt;h2 id=&quot;文件属性和权限&quot;&gt;&lt;a href=&quot;#文件属性和权限&quot; class=&quot;headerlink&quot; title=&quot;文件属性和权限&quot;&gt;&lt;/a&gt;文件属性和权限&lt;/h2&gt;&lt;p&gt;使用ls的-l命令&lt;br&gt;&lt;img src=&quot;/uploads/linux-li.png&quot; title=&quot;li -l指令结构图片&quot;&gt;&lt;br&gt;&lt;img src=&quot;/uploads/linux-quanxian.png&quot; title=&quot;文件属性和展现结构图片&quot;&gt;&lt;br&gt;&lt;img src=&quot;/uploads/linux-file-type.png&quot; title=&quot;文件类型和权限分析图片&quot;&gt; &lt;/p&gt;
+&lt;h2 id=&quot;文件属性和权限&quot;&gt;&lt;a href=&quot;#文件属性和权限&quot; class=&quot;headerlink&quot; title=&quot;文件属性和权限&quot;&gt;&lt;/a&gt;文件属性和权限&lt;/h2&gt;&lt;p&gt;使用ls的-l命令&lt;br&gt;&lt;img src=&quot;/uploads/linux-li.png&quot; title=&quot;li -l指令结构图片&quot;&gt;&lt;br&gt;&lt;img src=&quot;/uploads/linux-quanxian.png&quot; title=&quot;文件属性和展现结构图片&quot;&gt;&lt;br&gt;&lt;img src=&quot;/uploads/linux-file-type.png&quot; title=&quot;文件类型和权限分析图片&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
