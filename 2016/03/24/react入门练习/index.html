@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog,Front End" />
+  <meta name="keywords" content="React," />
 
 
 
@@ -59,67 +59,19 @@
 
 
 
-<meta name="description" content="Search Product
-  
-  .red{
-    color:#f00;
-  }
-  
-  
-  
-  
-  
-
-
-
-
-
-  var PRODUCTS = [
-  {category: &quot;Sporting Goods&quot;, price: &quot;$49.99&quot;, stocked: true, name: &quot;Football&quot;},
-  {category: &quot;Sporting Go">
-<meta property="og:type" content="website">
-<meta property="og:title" content="开朗的博客">
-<meta property="og:url" content="http://wangkailang.github.io/uploads/fliterSearchProduct.html">
+<meta name="description" content="React实现实时搜索查询，快速选择
+text">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react入门练习">
+<meta property="og:url" content="http://wangkailang.github.io/2016/03/24/react入门练习/index.html">
 <meta property="og:site_name" content="开朗的博客">
-<meta property="og:description" content="Search Product
-  
-  .red{
-    color:#f00;
-  }
-  
-  
-  
-  
-  
-
-
-
-
-
-  var PRODUCTS = [
-  {category: &quot;Sporting Goods&quot;, price: &quot;$49.99&quot;, stocked: true, name: &quot;Football&quot;},
-  {category: &quot;Sporting Go">
-<meta property="og:updated_time" content="2016-03-24T04:13:36.000Z">
+<meta property="og:description" content="React实现实时搜索查询，快速选择
+text">
+<meta property="og:updated_time" content="2016-03-24T04:28:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开朗的博客">
-<meta name="twitter:description" content="Search Product
-  
-  .red{
-    color:#f00;
-  }
-  
-  
-  
-  
-  
-
-
-
-
-
-  var PRODUCTS = [
-  {category: &quot;Sporting Goods&quot;, price: &quot;$49.99&quot;, stocked: true, name: &quot;Football&quot;},
-  {category: &quot;Sporting Go">
+<meta name="twitter:title" content="react入门练习">
+<meta name="twitter:description" content="React实现实时搜索查询，快速选择
+text">
 
 
 
@@ -137,13 +89,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-     | 开朗的博客
-  
-</title>
+  <title> react入门练习 | 开朗的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,7 +110,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -274,151 +220,137 @@
 
   <div id="posts" class="posts-expand">
     
-    
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Search Product</title>
-  <style>
-  .red{
-    color:#f00;
-  }
-  </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-</head>
-<body>
-<div id="content"></div>
-</body>
-<script type="text/babel">
-  var PRODUCTS = [
-  {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
-  {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
-  {category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
-  {category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
-  {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
-  {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
-];
 
-//   FilterProductTable
-//      - SearchBar
-//      -  ProductTable
-//          = ProductCategoryRow
-//          = ProductRow
+  
+  
 
-var SearchBar = React.createClass({
-  handleChange: function() {
-    this.props.onUserInput(this.refs.filterTextInput.value, this.refs.filterStockInput.checked);
-  },
-  render: function() {
-    return (
-      <form>
-        <input type="text" onChange={this.handleChange} placeholder="Search..." ref="filterTextInput" value={this.props.filterText}/>
-        <p>
-          <input type="checkbox" onChange={this.handleChange} ref="filterStockInput" checked={this.props.stockOnly}/>
-          Only show products in stock
-        </p>
-      </form>
-    );
-  }
-});
+  
+  
+  
 
-var ProductCategoryRow = React.createClass({
-  render: function() {
-    return (
-      <tr>
-        <th>{this.props.category}</th>
-      </tr>
-    );
-  }
-});
-
-var ProductRow = React.createClass({
-  render: function() {
-    var name = this.props.product.stocked ? <td>{this.props.product.name}</td>
- : <td className="red">{this.props.product.name}</td>
-    return (
-      <tr>
-        {name}
-        <td>{this.props.product.price}</td>
-      </tr>
-    );
-  }
-});
-
-var ProductTable = React.createClass({
-  render: function() {
-    var rows = [];
-    var categories = [];
-    this.props.products.forEach(function(product) {
-       if( categories.indexOf(product.category) < 0 ) {
-         categories.push(product.category);
-       }
-    });
-    for(var i=0; i<categories.length;i++) {
-      rows.push(<ProductCategoryRow category={categories[i]} key={categories[i]}/>);
-      var filterText = this.props.filterText;
-      var stockOnly = this.props.stockOnly
-      this.props.products.forEach(function(product) {
-        if( product.name.indexOf(filterText) === -1 || (stockOnly && !product.stocked) ) {
-           return ;
-         }
-        if(product.category == categories[i]) {
-          rows.push(<ProductRow product={product} key={product.name}/>);
-        }
-      });
-    }
-    return (
-      <table>
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Price</td>
-          </tr>
-        </thead>
-        <tbody>
-          {rows}
-        </tbody>
-      </table>
-    );
-  }
-});
-
-var FilterProductTable = React.createClass({
-  getInitialState: function() {
-    return {
-      filterText:'',
-      stockOnly:false
-    };
-  },
-  handleUserInput: function(filterText, stockOnly) {
-    //回调函数，传值
-    this.setState({
-      filterText: filterText,
-      stockOnly: stockOnly
-    });
-  },
-  render: function() {
-    return (
-      <div>
-        <SearchBar filterText={this.state.filterText} stockOnly={this.state.stockOnly} onUserInput={this.handleUserInput}/>
-        <ProductTable filterText={this.state.filterText} stockOnly={this.state.stockOnly} products={this.props.products}/>
-      </div>
-    );
-  }
-});
-
-ReactDOM.render(
-  <FilterProductTable products={PRODUCTS} />,
-  document.getElementById('content')
-);
-</script>
-</html>
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                react入门练习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-24T12:20:48+08:00" content="2016-03-24">
+              2016-03-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/React/" itemprop="url" rel="index">
+                    <span itemprop="name">React</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/24/react入门练习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/24/react入门练习/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>React实现实时搜索查询，快速选择</p>
+<a href="http://wangkailang.github.io/uploads/fliterSearchProduct.html" title="[external] [Link]">text</a>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag">#React</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/21/linux常用指令/" rel="next" title="Linux常识">
+                <i class="fa fa-chevron-left"></i> Linux常识
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -429,8 +361,8 @@ ReactDOM.render(
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="uploads/fliterSearchProduct.html"
-           data-title="" data-url="http://wangkailang.github.io/uploads/fliterSearchProduct.html">
+      <div class="ds-thread" data-thread-key="2016/03/24/react入门练习/"
+           data-title="react入门练习" data-url="http://wangkailang.github.io/2016/03/24/react入门练习/">
       </div>
     
   </div>
@@ -454,8 +386,17 @@ ReactDOM.render(
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/default_avatar.jpg"
@@ -538,6 +479,23 @@ ReactDOM.render(
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -632,6 +590,167 @@ ReactDOM.render(
 
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 
