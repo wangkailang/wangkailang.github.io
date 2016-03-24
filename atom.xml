@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-22T03:07:38.000Z</updated>
+  <updated>2016-03-22T03:18:23.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://wangkailang.github.io/2016/03/21/linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
     <id>http://wangkailang.github.io/2016/03/21/linux常用指令/</id>
     <published>2016-03-21T09:43:25.000Z</published>
-    <updated>2016-03-22T03:07:38.000Z</updated>
+    <updated>2016-03-22T03:18:23.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Linux是多用户多任务分时操作系统&quot;&gt;&lt;a href=&quot;#Linux是多用户多任务分时操作系统&quot; class=&quot;headerlink&quot; title=&quot;Linux是多用户多任务分时操作系统&quot;&gt;&lt;/a&gt;Linux是多用户多任务分时操作系统&lt;/h2&gt;&lt;p&gt;Linux中有些用户是用来完成特定任务的(称之为用户组)&lt;/p&gt;
 &lt;blockquote&gt;
@@ -99,6 +99,9 @@ kailang:x:1000:kailang
 &lt;h2 id=&quot;etc-shadow专门管理密码&quot;&gt;&lt;a href=&quot;#etc-shadow专门管理密码&quot; class=&quot;headerlink&quot; title=&quot;/etc/shadow专门管理密码&quot;&gt;&lt;/a&gt;/etc/shadow专门管理密码&lt;/h2&gt;&lt;h2 id=&quot;管理用户和组&quot;&gt;&lt;a href=&quot;#管理用户和组&quot; class=&quot;headerlink&quot; title=&quot;管理用户和组&quot;&gt;&lt;/a&gt;管理用户和组&lt;/h2&gt;&lt;p&gt;Linux为用户的增，删，改提供了基本的命令，实际上就是对上面的文件进行了修改。&lt;/p&gt;
 &lt;p&gt;Linux添加新用户&lt;br&gt;    useradd “新用户”&lt;/p&gt;
 &lt;h2 id=&quot;文件属性和权限&quot;&gt;&lt;a href=&quot;#文件属性和权限&quot; class=&quot;headerlink&quot; title=&quot;文件属性和权限&quot;&gt;&lt;/a&gt;文件属性和权限&lt;/h2&gt;&lt;p&gt;使用ls的-l命令&lt;br&gt;&lt;img src=&quot;/uploads/linux-li.png&quot; title=&quot;li -l指令结构图片&quot;&gt;&lt;br&gt;&lt;img src=&quot;/uploads/linux-quanxian.png&quot; title=&quot;文件属性和展现结构图片&quot;&gt;&lt;br&gt;&lt;img src=&quot;/uploads/linux-file-type.png&quot; title=&quot;文件类型和权限分析图片&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;第一个字符用于描述文件类型，可有的取值：- 、d、l、b、c、s和p 。&lt;br&gt;  － “－”代表一个普通文件&lt;br&gt;  － “d”代表这是一个目录&lt;br&gt;  － “l”代表软连接，硬连接没有特使标记&lt;br&gt;  － “b”和“c”代表文件设备，“b”是块设备，如磁盘。“c”是字符设备，如鼠标，键盘等需要连续串行读写的设备&lt;br&gt;  － “s”代表套接字（socket）文件，一般使用Unix domain socket时会创建这种类型的文件&lt;br&gt;  － “p”管道文件&lt;/p&gt;
+&lt;/blockquote&gt;
 </content>
     
     <summary type="html">

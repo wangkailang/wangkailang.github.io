@@ -82,7 +82,7 @@ daemon:x:2:2:daemon:/s">
 <meta property="og:image" content="http://wangkailang.github.io/uploads/linux-li.png">
 <meta property="og:image" content="http://wangkailang.github.io/uploads/linux-quanxian.png">
 <meta property="og:image" content="http://wangkailang.github.io/uploads/linux-file-type.png">
-<meta property="og:updated_time" content="2016-03-22T03:07:38.000Z">
+<meta property="og:updated_time" content="2016-03-22T03:18:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常识">
 <meta name="twitter:description" content="Linux是多用户多任务分时操作系统Linux中有些用户是用来完成特定任务的(称之为用户组)
@@ -403,6 +403,9 @@ kailang:x:1000:kailang
 <h2 id="etc-shadow专门管理密码"><a href="#etc-shadow专门管理密码" class="headerlink" title="/etc/shadow专门管理密码"></a>/etc/shadow专门管理密码</h2><h2 id="管理用户和组"><a href="#管理用户和组" class="headerlink" title="管理用户和组"></a>管理用户和组</h2><p>Linux为用户的增，删，改提供了基本的命令，实际上就是对上面的文件进行了修改。</p>
 <p>Linux添加新用户<br>    useradd “新用户”</p>
 <h2 id="文件属性和权限"><a href="#文件属性和权限" class="headerlink" title="文件属性和权限"></a>文件属性和权限</h2><p>使用ls的-l命令<br><img src="/uploads/linux-li.png" title="li -l指令结构图片"><br><img src="/uploads/linux-quanxian.png" title="文件属性和展现结构图片"><br><img src="/uploads/linux-file-type.png" title="文件类型和权限分析图片"></p>
+<blockquote>
+<p>第一个字符用于描述文件类型，可有的取值：- 、d、l、b、c、s和p 。<br>  － “－”代表一个普通文件<br>  － “d”代表这是一个目录<br>  － “l”代表软连接，硬连接没有特使标记<br>  － “b”和“c”代表文件设备，“b”是块设备，如磁盘。“c”是字符设备，如鼠标，键盘等需要连续串行读写的设备<br>  － “s”代表套接字（socket）文件，一般使用Unix domain socket时会创建这种类型的文件<br>  － “p”管道文件</p>
+</blockquote>
 
       
     </div>
