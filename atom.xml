@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-24T04:31:00.000Z</updated>
+  <updated>2016-03-24T05:59:56.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="http://wangkailang.github.io/2016/03/24/react%E5%85%A5%E9%97%A8%E7%BB%83%E4%B9%A0/"/>
     <id>http://wangkailang.github.io/2016/03/24/react入门练习/</id>
     <published>2016-03-24T04:20:48.000Z</published>
-    <updated>2016-03-24T04:31:00.000Z</updated>
+    <updated>2016-03-24T05:59:56.000Z</updated>
     
     <content type="html">&lt;p&gt;React实现实时搜索查询，快速选择&lt;/p&gt;
-&lt;a href=&quot;http://wangkailang.github.io/uploads/fliterSearchProduct.html&quot; title=&quot;[wangkailang] [ttp://wangkailang.github.io/uploads/fliterSearchProduct.html] target=_blank&quot;&gt;效果查看&lt;/a&gt;
+&lt;a href=&quot;http://wangkailang.github.io/uploads/fliterSearchProduct.html&quot; title=&quot;[wangkailang] [ttp://wangkailang.github.io/uploads/fliterSearchProduct.html]&quot;&gt;效果查看&lt;/a&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sass&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
     
     <summary type="html">
