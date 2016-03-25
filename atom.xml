@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-25T10:27:07.000Z</updated>
+  <updated>2016-03-25T10:33:20.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>React,node,ES6,JSX,Webpack示例</title>
+    <title>React示例(支持node、ES6、JSX、Webpack)</title>
     <link href="http://wangkailang.github.io/2016/03/25/React-node-ES6-JSX-Webpack%E7%A4%BA%E4%BE%8B/"/>
     <id>http://wangkailang.github.io/2016/03/25/React-node-ES6-JSX-Webpack示例/</id>
     <published>2016-03-25T07:19:18.000Z</published>
-    <updated>2016-03-25T10:27:07.000Z</updated>
+    <updated>2016-03-25T10:33:20.000Z</updated>
     
     <content type="html">&lt;p&gt;在 node下搭建起react的示例（支持ES6，JSX），webpack管理。&lt;/p&gt;
 &lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/buildGoodWeb/react/tree/master/react_es6_jsx_webpack_example&quot; title=&quot;[wangkailang] [https://github.com/buildGoodWeb/react/tree/master/react_es6_jsx_webpack_example]&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github源代码&lt;/a&gt;&lt;/h2&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
