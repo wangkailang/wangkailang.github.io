@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-24T07:56:41.000Z</updated>
+  <updated>2016-03-25T09:58:33.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -14,6 +14,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React,node,ES6,JSX,Webpack示例</title>
+    <link href="http://wangkailang.github.io/2016/03/25/React-node-ES6-JSX-Webpack%E7%A4%BA%E4%BE%8B/"/>
+    <id>http://wangkailang.github.io/2016/03/25/React-node-ES6-JSX-Webpack示例/</id>
+    <published>2016-03-25T07:19:18.000Z</published>
+    <updated>2016-03-25T09:58:33.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在 node下搭建起react的示例（支持ES6，JSX），webpack管理。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 新建一个项目文件
+mkdir react_example
+# 进入文件目录
+cd react_example
+# 初始化node项目
+npm init
+# JSX,ES6支持
+npm install babel-loader babel-core babel-preset-es2015 babel-preset-react --save-dev
+# ES6支持文件
+touch .babelrc
+#文件中添加{ &amp;quot;presets&amp;quot;: [&amp;quot;es2015&amp;quot;] }
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;安装-Webpack&quot;&gt;&lt;a href=&quot;#安装-Webpack&quot; class=&quot;headerlink&quot; title=&quot;安装 Webpack&quot;&gt;&lt;/a&gt;安装 Webpack&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm install webpack --save-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;创建webpack管理文件webpack-config-js&quot;&gt;&lt;a href=&quot;#创建webpack管理文件webpack-config-js&quot; class=&quot;headerlink&quot; title=&quot;创建webpack管理文件webpack.config.js&quot;&gt;&lt;/a&gt;创建webpack管理文件webpack.config.js&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;touch webpack.config.js
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;webpack基本配置如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var path = require(&amp;apos;path&amp;apos;);
+
+module.exports = {
+    entry: &amp;apos;./entry.js&amp;apos;,
+    output: {
+        path: path.join(__dirname, &amp;apos;/dist&amp;apos;),
+        filename: &amp;apos;bundle.js&amp;apos;
+    },
+    # resolve 指定可以被 import 的文件后缀。
+    # 比如 Hello.jsx 这样的文件就可以直接用 import Hello from &amp;apos;Hello&amp;apos; 引用。
+    resolve: {
+        extensions: [&amp;apos;&amp;apos;, &amp;apos;.js&amp;apos;, &amp;apos;.jsx&amp;apos;]
+    },
+    module: {
+        # loaders 指定 babel-loader 编译后缀名为 .js 或者 .jsx 的文件，这样你就可以在这两种类型的文件中自由使用 JSX 和 ES6 了。
+        loaders: [
+            {
+              test: /\.js|jsx$/,
+              exclude: /node_modules/,
+              loader: &amp;apos;babel&amp;apos;,
+              query: {
+                presets: [&amp;apos;react&amp;apos;, &amp;apos;es2015&amp;apos;]
+              }
+            }
+        ]
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;监听编译:&lt;br&gt;      webpack -d –watch&lt;/p&gt;
+&lt;p&gt;##&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在 node下搭建起react的示例（支持ES6，JSX），webpack管理。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 新建一个项目文件
+mkdir react_example
+# 进入文件目录
+cd react_example
+# 初始化node项目
+npm init
+# J
+    
+    </summary>
+    
+      <category term="React" scheme="http://wangkailang.github.io/categories/React/"/>
+    
+    
+      <category term="React" scheme="http://wangkailang.github.io/tags/React/"/>
+    
+      <category term="Webpack" scheme="http://wangkailang.github.io/tags/Webpack/"/>
+    
+      <category term="ES6" scheme="http://wangkailang.github.io/tags/ES6/"/>
+    
+      <category term="node" scheme="http://wangkailang.github.io/tags/node/"/>
+    
+  </entry>
   
   <entry>
     <title>react入门练习</title>

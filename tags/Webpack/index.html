@@ -59,70 +59,15 @@
 
 
 
-<meta name="description" content="Search Product
-  
-  .red{
-    color:#f00;
-  }
-  
-  
-  
-  
-  
-
-
-React实现实时搜索查询，快速选择
-
-
-
-  var PRODUCTS = [
-  {category: &quot;Sporting Goods&quot;, price: &quot;$49.99&quot;, stocked: true, name: &quot;Football&quot;},
-  {cat">
+<meta name="description" content="前端开发技术博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="开朗的博客">
-<meta property="og:url" content="http://wangkailang.github.io/uploads/fliterSearchProduct.html">
+<meta property="og:url" content="http://wangkailang.github.io/tags/Webpack/index.html">
 <meta property="og:site_name" content="开朗的博客">
-<meta property="og:description" content="Search Product
-  
-  .red{
-    color:#f00;
-  }
-  
-  
-  
-  
-  
-
-
-React实现实时搜索查询，快速选择
-
-
-
-  var PRODUCTS = [
-  {category: &quot;Sporting Goods&quot;, price: &quot;$49.99&quot;, stocked: true, name: &quot;Football&quot;},
-  {cat">
-<meta property="og:updated_time" content="2016-03-24T06:05:53.000Z">
+<meta property="og:description" content="前端开发技术博客">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开朗的博客">
-<meta name="twitter:description" content="Search Product
-  
-  .red{
-    color:#f00;
-  }
-  
-  
-  
-  
-  
-
-
-React实现实时搜索查询，快速选择
-
-
-
-  var PRODUCTS = [
-  {category: &quot;Sporting Goods&quot;, price: &quot;$49.99&quot;, stocked: true, name: &quot;Football&quot;},
-  {cat">
+<meta name="twitter:description" content="前端开发技术博客">
 
 
 
@@ -140,13 +85,7 @@ React实现实时搜索查询，快速选择
   };
 </script>
 
-  <title>
-  
-
-  
-     | 开朗的博客
-  
-</title>
+  <title> 标签: Webpack | 开朗的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -275,155 +214,46 @@ React实现实时搜索查询，快速选择
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        Webpack
+        <small>标签</small>
+      </h2>
+    </div>
+
     
-    
-      <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Search Product</title>
-  <style>
-  .red{
-    color:#f00;
-  }
-  </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-</head>
-<body>
-<h2>React实现实时搜索查询，快速选择</h2>
-<div id="content"></div>
-</body>
-<script type="text/babel">
-  var PRODUCTS = [
-  {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
-  {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
-  {category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
-  {category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
-  {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
-  {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
-];
+      
 
-//   FilterProductTable
-//      - SearchBar
-//      -  ProductTable
-//          = ProductCategoryRow
-//          = ProductRow
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-var SearchBar = React.createClass({
-  handleChange: function() {
-    this.props.onUserInput(this.refs.filterTextInput.value, this.refs.filterStockInput.checked);
-  },
-  render: function() {
-    return (
-      <form>
-        <input type="text" onChange={this.handleChange} placeholder="Search..." ref="filterTextInput" value={this.props.filterText}/>
-        <p>
-          <input type="checkbox" onChange={this.handleChange} ref="filterStockInput" checked={this.props.stockOnly}/>
-          Only show products in stock
-        </p>
-      </form>
-    );
-  }
-});
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2016/03/25/React-node-ES6-JSX-Webpack示例/" itemprop="url">
+              
+                <span itemprop="name">React,node,ES6,JSX,Webpack示例</span>
+              
+            </a>
+        
+      </h1>
 
-var ProductCategoryRow = React.createClass({
-  render: function() {
-    return (
-      <tr>
-        <th>{this.props.category}</th>
-      </tr>
-    );
-  }
-});
-
-var ProductRow = React.createClass({
-  render: function() {
-    var name = this.props.product.stocked ? <td>{this.props.product.name}</td>
- : <td className="red">{this.props.product.name}</td>
-    return (
-      <tr>
-        {name}
-        <td>{this.props.product.price}</td>
-      </tr>
-    );
-  }
-});
-
-var ProductTable = React.createClass({
-  render: function() {
-    var rows = [];
-    var categories = [];
-    this.props.products.forEach(function(product) {
-       if( categories.indexOf(product.category) < 0 ) {
-         categories.push(product.category);
-       }
-    });
-    for(var i=0; i<categories.length;i++) {
-      rows.push(<ProductCategoryRow category={categories[i]} key={categories[i]}/>);
-      var filterText = this.props.filterText;
-      var stockOnly = this.props.stockOnly
-      this.props.products.forEach(function(product) {
-        if( product.name.indexOf(filterText) === -1 || (stockOnly && !product.stocked) ) {
-           return ;
-         }
-        if(product.category == categories[i]) {
-          rows.push(<ProductRow product={product} key={product.name}/>);
-        }
-      });
-    }
-    return (
-      <table>
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Price</td>
-          </tr>
-        </thead>
-        <tbody>
-          {rows}
-        </tbody>
-      </table>
-    );
-  }
-});
-
-var FilterProductTable = React.createClass({
-  getInitialState: function() {
-    return {
-      filterText:'',
-      stockOnly:false
-    };
-  },
-  handleUserInput: function(filterText, stockOnly) {
-    //回调函数，传值
-    this.setState({
-      filterText: filterText,
-      stockOnly: stockOnly
-    });
-  },
-  render: function() {
-    return (
-      <div>
-        <SearchBar filterText={this.state.filterText} stockOnly={this.state.stockOnly} onUserInput={this.handleUserInput}/>
-        <ProductTable filterText={this.state.filterText} stockOnly={this.state.stockOnly} products={this.props.products}/>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-03-25T15:19:18+08:00"
+              content="2016-03-25" >
+          03-25
+        </time>
       </div>
-    );
-  }
-});
 
-ReactDOM.render(
-  <FilterProductTable products={PRODUCTS} />,
-  document.getElementById('content')
-);
-</script>
-</html>
+    </header>
+  </article>
+
 
     
   </div>
+
+  
 
 
           </div>
@@ -431,14 +261,6 @@ ReactDOM.render(
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="uploads/fliterSearchProduct.html"
-           data-title="" data-url="http://wangkailang.github.io/uploads/fliterSearchProduct.html">
-      </div>
-    
-  </div>
-
 
         </div>
         
