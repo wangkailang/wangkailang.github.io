@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-25T10:33:20.000Z</updated>
+  <updated>2016-03-29T10:34:55.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -16,11 +16,94 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>webpack基础配置</title>
+    <link href="http://wangkailang.github.io/2016/03/29/webpack%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/"/>
+    <id>http://wangkailang.github.io/2016/03/29/webpack基础配置/</id>
+    <published>2016-03-29T09:04:27.000Z</published>
+    <updated>2016-03-29T10:34:55.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;源代码&quot;&gt;&lt;a href=&quot;#源代码&quot; class=&quot;headerlink&quot; title=&quot;源代码&quot;&gt;&lt;/a&gt;源代码&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/buildGoodWeb/webpack_collect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/buildGoodWeb/webpack_collect&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;启动&quot;&gt;&lt;a href=&quot;#启动&quot; class=&quot;headerlink&quot; title=&quot;启动&quot;&gt;&lt;/a&gt;启动&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm install
+npm run start
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;学习资源&quot;&gt;&lt;a href=&quot;#学习资源&quot; class=&quot;headerlink&quot; title=&quot;学习资源&quot;&gt;&lt;/a&gt;学习资源&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://zhaoda.net/webpack-handbook/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://zhaoda.net/webpack-handbook/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;示例项目初始化&quot;&gt;&lt;a href=&quot;#示例项目初始化&quot; class=&quot;headerlink&quot; title=&quot;示例项目初始化&quot;&gt;&lt;/a&gt;示例项目初始化&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm init
+# webpack依赖
+npm install webpack --save-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;webpack安装到全局-运行webpack命令&quot;&gt;&lt;a href=&quot;#webpack安装到全局-运行webpack命令&quot; class=&quot;headerlink&quot; title=&quot;webpack安装到全局(运行webpack命令)&quot;&gt;&lt;/a&gt;webpack安装到全局(运行webpack命令)&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm install webpack -g
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;##使用&lt;/p&gt;
+&lt;p&gt;首先创建一个静态页面 index.html 和一个 JS 入口文件 entry.js：&lt;br&gt;            // touch index.html&lt;br&gt;            &lt;!-- index.html --&gt;&lt;br&gt;            &lt;html&gt;&lt;br&gt;            &lt;head&gt;&lt;br&gt;              &lt;meta charset=&quot;utf-8&quot;&gt;&lt;br&gt;            &lt;/head&gt;&lt;br&gt;            &lt;body&gt;&lt;br&gt;              &lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;&lt;br&gt;            &lt;/body&gt;&lt;br&gt;            &lt;/html&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// touch entry.js
+document.write(&amp;apos;It works.&amp;apos;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后编译 entry.js 并打包到 bundle.js：&lt;br&gt;            webpack ./entry.js bundle.js&lt;/p&gt;
+&lt;p&gt;直接打开index.html&lt;/p&gt;
+&lt;h3 id=&quot;添加模块&quot;&gt;&lt;a href=&quot;#添加模块&quot; class=&quot;headerlink&quot; title=&quot;添加模块&quot;&gt;&lt;/a&gt;添加模块&lt;/h3&gt;&lt;p&gt;添加一个模块 module.js 并修改入口 entry.js&lt;br&gt;            // touch module.js&lt;br&gt;            module.exports = ‘It works from module.js.’&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// entry.js
+document.write(&amp;apos;It works.&amp;apos;)
+document.write(require(&amp;apos;./module.js&amp;apos;)) // 添加模块
+
+//重新打包，然后刷新页面
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Webpack 会给每个模块分配一个唯一的 id 并通过这个 id 索引和访问模块。&lt;/p&gt;
+&lt;h2 id=&quot;loader&quot;&gt;&lt;a href=&quot;#loader&quot; class=&quot;headerlink&quot; title=&quot;loader&quot;&gt;&lt;/a&gt;loader&lt;/h2&gt;&lt;p&gt;Webpack 本身只能处理 JavaScript 模块，要处理其他类型的文件，需要使用 loader 进行转换。&lt;/p&gt;
+&lt;p&gt;Loader 可以理解为是&lt;strong&gt;模块和资源的转换器&lt;/strong&gt;，它本身是一个&lt;strong&gt;函数&lt;/strong&gt;，接受源文件作为参数，返回转换的结果。这样，我们就可以通过 require 来加载任何类型的模块或文件，比如 CoffeeScript、 JSX、 LESS 或图片。&lt;/p&gt;
+&lt;h3 id=&quot;loader特征总结&quot;&gt;&lt;a href=&quot;#loader特征总结&quot; class=&quot;headerlink&quot; title=&quot;loader特征总结&quot;&gt;&lt;/a&gt;loader特征总结&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;管道方式链式调用；&lt;/li&gt;
+&lt;li&gt;可同步、异步执行；&lt;/li&gt;
+&lt;li&gt;通过文件扩展名（或正则表达式）绑定给不同类型的文件；&lt;/li&gt;
+&lt;li&gt;可通过npm发布和安装&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;接上一个例子，在页面中引入一个 CSS 文件 style.css。首页将 style.css 也看成是一个模块，然后用 css-loader 来读取它，再用 style-loader 把它插入到页面中。&lt;br&gt;            /&lt;em&gt; style.css &lt;/em&gt;/&lt;br&gt;            body { background: yellow; }&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//entry.js
+require(&amp;quot;!style!css!./style.css&amp;quot;) // 载入 style.css
+document.write(&amp;apos;It works.&amp;apos;)
+document.write(require(&amp;apos;./module.js&amp;apos;))
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装css loader&lt;br&gt;            npm install css-loader style-loader –save-dev&lt;/p&gt;
+&lt;h2 id=&quot;配置文件&quot;&gt;&lt;a href=&quot;#配置文件&quot; class=&quot;headerlink&quot; title=&quot;配置文件&quot;&gt;&lt;/a&gt;配置文件&lt;/h2&gt;&lt;p&gt;Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 –config 选项来指定配置文件。&lt;/p&gt;
+&lt;p&gt;然后创建一个配置文件 webpack.config.js：&lt;br&gt;            var webpack = require(‘webpack’)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;module.exports = {
+  entry: &amp;apos;./entry.js&amp;apos;,
+  output: {
+    path: __dirname,
+    filename: &amp;apos;bundle.js&amp;apos;
+  },
+  module: {
+    loaders: [
+      {test: /\.css$/, loader: &amp;apos;style!css&amp;apos;}
+    ]
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;简化 entry.js 中的 style.css 加载方式：&lt;br&gt;            require(‘./style.css’)&lt;/p&gt;
+&lt;p&gt;运行 webpack，可以看到 webpack 通过配置文件执行的结果和上一章节通过命令行 webpack entry.js bundle.js –module-bind ‘css=style!css’ 执行的结果是一样的。&lt;/p&gt;
+&lt;h2 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot; class=&quot;headerlink&quot; title=&quot;插件&quot;&gt;&lt;/a&gt;插件&lt;/h2&gt;&lt;h2 id=&quot;开发环境&quot;&gt;&lt;a href=&quot;#开发环境&quot; class=&quot;headerlink&quot; title=&quot;开发环境&quot;&gt;&lt;/a&gt;开发环境&lt;/h2&gt;&lt;p&gt;项目逐渐变大，webpack 的编译时间会变长，可以通过参数让编译的输出内容带有进度和颜色。&lt;br&gt;            webpack –progress –colors&lt;br&gt;            // 或者启动监听模式&lt;br&gt;            webpack –progress –colors –watch&lt;/p&gt;
+&lt;h2 id=&quot;使用-webpack-dev-server-开发服务&quot;&gt;&lt;a href=&quot;#使用-webpack-dev-server-开发服务&quot; class=&quot;headerlink&quot; title=&quot;使用 webpack-dev-server 开发服务&quot;&gt;&lt;/a&gt;使用 webpack-dev-server 开发服务&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;// 全局安装
+npm install webpack-dev-server -g
+// 安装依赖
+npm install webpack-dev-server --save-dev    
+// 运行
+webpack-dev-server --progress --colors        
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;故障处理&quot;&gt;&lt;a href=&quot;#故障处理&quot; class=&quot;headerlink&quot; title=&quot;故障处理&quot;&gt;&lt;/a&gt;故障处理&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;// 打印错误详情
+webpack --display-error-details
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Webpack 的配置提供了 resolve 和 resolveLoader 参数来设置模块解析的处理细节，resolve 用来配置应用层的模块（要被打包的模块）解析，resolveLoader 用来配置 loader 模块的解析。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;源代码&quot;&gt;&lt;a href=&quot;#源代码&quot; class=&quot;headerlink&quot; title=&quot;源代码&quot;&gt;&lt;/a&gt;源代码&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/buildGoodWeb/webpack_collect&quot; target=&quot;
+    
+    </summary>
+    
+      <category term="Webpack" scheme="http://wangkailang.github.io/categories/Webpack/"/>
+    
+    
+      <category term="Webpack" scheme="http://wangkailang.github.io/tags/Webpack/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React示例(支持node、ES6、JSX、Webpack)</title>
     <link href="http://wangkailang.github.io/2016/03/25/React-node-ES6-JSX-Webpack%E7%A4%BA%E4%BE%8B/"/>
     <id>http://wangkailang.github.io/2016/03/25/React-node-ES6-JSX-Webpack示例/</id>
     <published>2016-03-25T07:19:18.000Z</published>
-    <updated>2016-03-25T10:33:20.000Z</updated>
+    <updated>2016-03-25T10:39:16.000Z</updated>
     
     <content type="html">&lt;p&gt;在 node下搭建起react的示例（支持ES6，JSX），webpack管理。&lt;/p&gt;
 &lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://github.com/buildGoodWeb/react/tree/master/react_es6_jsx_webpack_example&quot; title=&quot;[wangkailang] [https://github.com/buildGoodWeb/react/tree/master/react_es6_jsx_webpack_example]&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github源代码&lt;/a&gt;&lt;/h2&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -41,7 +124,7 @@ touch .babelrc
 # webpack-dev-server安装（用作服务器）
 npm install webpack-dev-server --save-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;创建webpack管理文件webpack-config-js&quot;&gt;&lt;a href=&quot;#创建webpack管理文件webpack-config-js&quot; class=&quot;headerlink&quot; title=&quot;创建webpack管理文件webpack.config.js&quot;&gt;&lt;/a&gt;创建webpack管理文件webpack.config.js&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;touch webpack.config.js
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;webpack基本配置如下：&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;webpack基本配置如下：&lt;br&gt;&lt;a href=&quot;http://npm.taobao.org/package/babel-loader&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考淘宝cnpm源&lt;/a&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;var path = require(&amp;apos;path&amp;apos;);
 
 module.exports = {
