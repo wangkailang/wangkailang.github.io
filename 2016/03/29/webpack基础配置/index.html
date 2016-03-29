@@ -71,7 +71,7 @@ npm run start
 启动npm install
 npm run start
 学习资源http://zhaoda.net/webpack-handbook/index.html">
-<meta property="og:updated_time" content="2016-03-29T10:47:18.000Z">
+<meta property="og:updated_time" content="2016-03-29T10:49:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack基础配置">
 <meta name="twitter:description" content="源代码https://github.com/buildGoodWeb/webpack_collect
@@ -364,14 +364,14 @@ module.exports = {
 <pre><code>webpack --progress --colors
 // 或者启动监听模式
 webpack --progress --colors --watch
-</code></pre><p>打开<a href="http://localhost:8080/webpack-dev-server/bundle" target="_blank" rel="external">http://localhost:8080/webpack-dev-server/bundle</a> </p>
-<h2 id="使用-webpack-dev-server-开发服务"><a href="#使用-webpack-dev-server-开发服务" class="headerlink" title="使用 webpack-dev-server 开发服务"></a>使用 webpack-dev-server 开发服务</h2><pre><code>// 全局安装
+</code></pre><h2 id="使用-webpack-dev-server-开发服务（当作服务器）"><a href="#使用-webpack-dev-server-开发服务（当作服务器）" class="headerlink" title="使用 webpack-dev-server 开发服务（当作服务器）"></a>使用 webpack-dev-server 开发服务（当作服务器）</h2><pre><code>// 全局安装
 npm install webpack-dev-server -g
 // 安装依赖
 npm install webpack-dev-server --save-dev    
 // 运行
-webpack-dev-server --progress --colors        
-</code></pre><h2 id="故障处理"><a href="#故障处理" class="headerlink" title="故障处理"></a>故障处理</h2><pre><code>// 打印错误详情
+webpack-dev-server --progress --colors    
+</code></pre><p>打开<a href="http://localhost:8080/webpack-dev-server/bundle" target="_blank" rel="external">http://localhost:8080/webpack-dev-server/bundle</a>                 </p>
+<h2 id="故障处理"><a href="#故障处理" class="headerlink" title="故障处理"></a>故障处理</h2><pre><code>// 打印错误详情
 webpack --display-error-details
 </code></pre><p>Webpack 的配置提供了 resolve 和 resolveLoader 参数来设置模块解析的处理细节，resolve 用来配置应用层的模块（要被打包的模块）解析，resolveLoader 用来配置 loader 模块的解析。</p>
 
@@ -557,7 +557,7 @@ webpack --display-error-details
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#源代码"><span class="nav-number">1.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">2.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习资源"><span class="nav-number">3.</span> <span class="nav-text">学习资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例项目初始化"><span class="nav-number">4.</span> <span class="nav-text">示例项目初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack安装到全局-运行webpack命令"><span class="nav-number">5.</span> <span class="nav-text">webpack安装到全局(运行webpack命令)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">6.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加模块"><span class="nav-number">6.1.</span> <span class="nav-text">添加模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#loader"><span class="nav-number">7.</span> <span class="nav-text">loader</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#loader特征总结"><span class="nav-number">7.1.</span> <span class="nav-text">loader特征总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-number">8.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">9.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发环境"><span class="nav-number">10.</span> <span class="nav-text">开发环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-webpack-dev-server-开发服务"><span class="nav-number">11.</span> <span class="nav-text">使用 webpack-dev-server 开发服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#故障处理"><span class="nav-number">12.</span> <span class="nav-text">故障处理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#源代码"><span class="nav-number">1.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">2.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习资源"><span class="nav-number">3.</span> <span class="nav-text">学习资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例项目初始化"><span class="nav-number">4.</span> <span class="nav-text">示例项目初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack安装到全局-运行webpack命令"><span class="nav-number">5.</span> <span class="nav-text">webpack安装到全局(运行webpack命令)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">6.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加模块"><span class="nav-number">6.1.</span> <span class="nav-text">添加模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#loader"><span class="nav-number">7.</span> <span class="nav-text">loader</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#loader特征总结"><span class="nav-number">7.1.</span> <span class="nav-text">loader特征总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-number">8.</span> <span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">9.</span> <span class="nav-text">插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发环境"><span class="nav-number">10.</span> <span class="nav-text">开发环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-webpack-dev-server-开发服务（当作服务器）"><span class="nav-number">11.</span> <span class="nav-text">使用 webpack-dev-server 开发服务（当作服务器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#故障处理"><span class="nav-number">12.</span> <span class="nav-text">故障处理</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-29T10:47:18.000Z</updated>
+  <updated>2016-03-29T10:49:59.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://wangkailang.github.io/2016/03/29/webpack%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/"/>
     <id>http://wangkailang.github.io/2016/03/29/webpack基础配置/</id>
     <published>2016-03-29T09:04:27.000Z</published>
-    <updated>2016-03-29T10:47:18.000Z</updated>
+    <updated>2016-03-29T10:49:59.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;源代码&quot;&gt;&lt;a href=&quot;#源代码&quot; class=&quot;headerlink&quot; title=&quot;源代码&quot;&gt;&lt;/a&gt;源代码&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/buildGoodWeb/webpack_collect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/buildGoodWeb/webpack_collect&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;启动&quot;&gt;&lt;a href=&quot;#启动&quot; class=&quot;headerlink&quot; title=&quot;启动&quot;&gt;&lt;/a&gt;启动&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm install
@@ -86,14 +86,14 @@ module.exports = {
 &lt;pre&gt;&lt;code&gt;webpack --progress --colors
 // 或者启动监听模式
 webpack --progress --colors --watch
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;打开&lt;a href=&quot;http://localhost:8080/webpack-dev-server/bundle&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:8080/webpack-dev-server/bundle&lt;/a&gt; &lt;/p&gt;
-&lt;h2 id=&quot;使用-webpack-dev-server-开发服务&quot;&gt;&lt;a href=&quot;#使用-webpack-dev-server-开发服务&quot; class=&quot;headerlink&quot; title=&quot;使用 webpack-dev-server 开发服务&quot;&gt;&lt;/a&gt;使用 webpack-dev-server 开发服务&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;// 全局安装
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;使用-webpack-dev-server-开发服务（当作服务器）&quot;&gt;&lt;a href=&quot;#使用-webpack-dev-server-开发服务（当作服务器）&quot; class=&quot;headerlink&quot; title=&quot;使用 webpack-dev-server 开发服务（当作服务器）&quot;&gt;&lt;/a&gt;使用 webpack-dev-server 开发服务（当作服务器）&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;// 全局安装
 npm install webpack-dev-server -g
 // 安装依赖
 npm install webpack-dev-server --save-dev    
 // 运行
-webpack-dev-server --progress --colors        
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;故障处理&quot;&gt;&lt;a href=&quot;#故障处理&quot; class=&quot;headerlink&quot; title=&quot;故障处理&quot;&gt;&lt;/a&gt;故障处理&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;// 打印错误详情
+webpack-dev-server --progress --colors    
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;打开&lt;a href=&quot;http://localhost:8080/webpack-dev-server/bundle&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:8080/webpack-dev-server/bundle&lt;/a&gt;                 &lt;/p&gt;
+&lt;h2 id=&quot;故障处理&quot;&gt;&lt;a href=&quot;#故障处理&quot; class=&quot;headerlink&quot; title=&quot;故障处理&quot;&gt;&lt;/a&gt;故障处理&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;// 打印错误详情
 webpack --display-error-details
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Webpack 的配置提供了 resolve 和 resolveLoader 参数来设置模块解析的处理细节，resolve 用来配置应用层的模块（要被打包的模块）解析，resolveLoader 用来配置 loader 模块的解析。&lt;/p&gt;
 </content>
