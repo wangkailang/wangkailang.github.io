@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-29T10:34:55.000Z</updated>
+  <updated>2016-03-29T10:38:10.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -20,12 +20,13 @@
     <link href="http://wangkailang.github.io/2016/03/29/webpack%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/"/>
     <id>http://wangkailang.github.io/2016/03/29/webpack基础配置/</id>
     <published>2016-03-29T09:04:27.000Z</published>
-    <updated>2016-03-29T10:34:55.000Z</updated>
+    <updated>2016-03-29T10:38:10.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;源代码&quot;&gt;&lt;a href=&quot;#源代码&quot; class=&quot;headerlink&quot; title=&quot;源代码&quot;&gt;&lt;/a&gt;源代码&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/buildGoodWeb/webpack_collect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/buildGoodWeb/webpack_collect&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;启动&quot;&gt;&lt;a href=&quot;#启动&quot; class=&quot;headerlink&quot; title=&quot;启动&quot;&gt;&lt;/a&gt;启动&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm install
 npm run start
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;学习资源&quot;&gt;&lt;a href=&quot;#学习资源&quot; class=&quot;headerlink&quot; title=&quot;学习资源&quot;&gt;&lt;/a&gt;学习资源&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://zhaoda.net/webpack-handbook/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://zhaoda.net/webpack-handbook/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;示例项目初始化&quot;&gt;&lt;a href=&quot;#示例项目初始化&quot; class=&quot;headerlink&quot; title=&quot;示例项目初始化&quot;&gt;&lt;/a&gt;示例项目初始化&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm init
 # webpack依赖
 npm install webpack --save-dev
@@ -87,7 +88,10 @@ webpack --display-error-details
     
     <summary type="html">
     
-      &lt;h2 id=&quot;源代码&quot;&gt;&lt;a href=&quot;#源代码&quot; class=&quot;headerlink&quot; title=&quot;源代码&quot;&gt;&lt;/a&gt;源代码&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/buildGoodWeb/webpack_collect&quot; target=&quot;
+      &lt;h2 id=&quot;源代码&quot;&gt;&lt;a href=&quot;#源代码&quot; class=&quot;headerlink&quot; title=&quot;源代码&quot;&gt;&lt;/a&gt;源代码&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/buildGoodWeb/webpack_collect&quot;&gt;https://github.com/buildGoodWeb/webpack_collect&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;启动&quot;&gt;&lt;a href=&quot;#启动&quot; class=&quot;headerlink&quot; title=&quot;启动&quot;&gt;&lt;/a&gt;启动&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm install
+npm run start
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;学习资源&quot;&gt;&lt;a href=&quot;#学习资源&quot; class=&quot;headerlink&quot; title=&quot;学习资源&quot;&gt;&lt;/a&gt;学习资源&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://zhaoda.net/webpack-handbook/index.html&quot;&gt;http://zhaoda.net/webpack-handbook/index.html&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     

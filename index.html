@@ -296,70 +296,15 @@
 
       
         
-          
-            <h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p><a href="https://github.com/buildGoodWeb/webpack_collect" target="_blank" rel="external">https://github.com/buildGoodWeb/webpack_collect</a></p>
+          <h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><p><a href="https://github.com/buildGoodWeb/webpack_collect">https://github.com/buildGoodWeb/webpack_collect</a></p>
 <h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre><code>npm install
 npm run start
-</code></pre><h2 id="学习资源"><a href="#学习资源" class="headerlink" title="学习资源"></a>学习资源</h2><p><a href="http://zhaoda.net/webpack-handbook/index.html" target="_blank" rel="external">http://zhaoda.net/webpack-handbook/index.html</a></p>
-<h2 id="示例项目初始化"><a href="#示例项目初始化" class="headerlink" title="示例项目初始化"></a>示例项目初始化</h2><pre><code>npm init
-# webpack依赖
-npm install webpack --save-dev
-</code></pre><h2 id="webpack安装到全局-运行webpack命令"><a href="#webpack安装到全局-运行webpack命令" class="headerlink" title="webpack安装到全局(运行webpack命令)"></a>webpack安装到全局(运行webpack命令)</h2><pre><code>npm install webpack -g
-</code></pre><p>##使用</p>
-<p>首先创建一个静态页面 index.html 和一个 JS 入口文件 entry.js：<br>            // touch index.html<br>            <!-- index.html --><br>            <html><br>            <head><br>              <meta charset="utf-8"><br>            </head><br>            <body><br>              <script src="bundle.js"></script><br>            </body><br>            </html></p>
-<pre><code>// touch entry.js
-document.write(&apos;It works.&apos;);
-</code></pre><p>然后编译 entry.js 并打包到 bundle.js：<br>            webpack ./entry.js bundle.js</p>
-<p>直接打开index.html</p>
-<h3 id="添加模块"><a href="#添加模块" class="headerlink" title="添加模块"></a>添加模块</h3><p>添加一个模块 module.js 并修改入口 entry.js<br>            // touch module.js<br>            module.exports = ‘It works from module.js.’</p>
-<pre><code>// entry.js
-document.write(&apos;It works.&apos;)
-document.write(require(&apos;./module.js&apos;)) // 添加模块
-
-//重新打包，然后刷新页面
-</code></pre><p>Webpack 会给每个模块分配一个唯一的 id 并通过这个 id 索引和访问模块。</p>
-<h2 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h2><p>Webpack 本身只能处理 JavaScript 模块，要处理其他类型的文件，需要使用 loader 进行转换。</p>
-<p>Loader 可以理解为是<strong>模块和资源的转换器</strong>，它本身是一个<strong>函数</strong>，接受源文件作为参数，返回转换的结果。这样，我们就可以通过 require 来加载任何类型的模块或文件，比如 CoffeeScript、 JSX、 LESS 或图片。</p>
-<h3 id="loader特征总结"><a href="#loader特征总结" class="headerlink" title="loader特征总结"></a>loader特征总结</h3><ol>
-<li>管道方式链式调用；</li>
-<li>可同步、异步执行；</li>
-<li>通过文件扩展名（或正则表达式）绑定给不同类型的文件；</li>
-<li>可通过npm发布和安装</li>
-</ol>
-<p>接上一个例子，在页面中引入一个 CSS 文件 style.css。首页将 style.css 也看成是一个模块，然后用 css-loader 来读取它，再用 style-loader 把它插入到页面中。<br>            /<em> style.css </em>/<br>            body { background: yellow; }</p>
-<pre><code>//entry.js
-require(&quot;!style!css!./style.css&quot;) // 载入 style.css
-document.write(&apos;It works.&apos;)
-document.write(require(&apos;./module.js&apos;))
-</code></pre><p>安装css loader<br>            npm install css-loader style-loader –save-dev</p>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 –config 选项来指定配置文件。</p>
-<p>然后创建一个配置文件 webpack.config.js：<br>            var webpack = require(‘webpack’)</p>
-<pre><code>module.exports = {
-  entry: &apos;./entry.js&apos;,
-  output: {
-    path: __dirname,
-    filename: &apos;bundle.js&apos;
-  },
-  module: {
-    loaders: [
-      {test: /\.css$/, loader: &apos;style!css&apos;}
-    ]
-  }
-}
-</code></pre><p>简化 entry.js 中的 style.css 加载方式：<br>            require(‘./style.css’)</p>
-<p>运行 webpack，可以看到 webpack 通过配置文件执行的结果和上一章节通过命令行 webpack entry.js bundle.js –module-bind ‘css=style!css’ 执行的结果是一样的。</p>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>项目逐渐变大，webpack 的编译时间会变长，可以通过参数让编译的输出内容带有进度和颜色。<br>            webpack –progress –colors<br>            // 或者启动监听模式<br>            webpack –progress –colors –watch</p>
-<h2 id="使用-webpack-dev-server-开发服务"><a href="#使用-webpack-dev-server-开发服务" class="headerlink" title="使用 webpack-dev-server 开发服务"></a>使用 webpack-dev-server 开发服务</h2><pre><code>// 全局安装
-npm install webpack-dev-server -g
-// 安装依赖
-npm install webpack-dev-server --save-dev    
-// 运行
-webpack-dev-server --progress --colors        
-</code></pre><h2 id="故障处理"><a href="#故障处理" class="headerlink" title="故障处理"></a>故障处理</h2><pre><code>// 打印错误详情
-webpack --display-error-details
-</code></pre><p>Webpack 的配置提供了 resolve 和 resolveLoader 参数来设置模块解析的处理细节，resolve 用来配置应用层的模块（要被打包的模块）解析，resolveLoader 用来配置 loader 模块的解析。</p>
-
-          
+</code></pre><h2 id="学习资源"><a href="#学习资源" class="headerlink" title="学习资源"></a>学习资源</h2><p><a href="http://zhaoda.net/webpack-handbook/index.html">http://zhaoda.net/webpack-handbook/index.html</a></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/29/webpack基础配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
