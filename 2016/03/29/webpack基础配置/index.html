@@ -71,7 +71,7 @@ npm run start
 启动npm install
 npm run start
 学习资源http://zhaoda.net/webpack-handbook/index.html">
-<meta property="og:updated_time" content="2016-03-29T10:42:18.000Z">
+<meta property="og:updated_time" content="2016-03-29T10:43:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack基础配置">
 <meta name="twitter:description" content="源代码https://github.com/buildGoodWeb/webpack_collect
@@ -310,10 +310,14 @@ npm run start
 npm install webpack --save-dev
 </code></pre><h2 id="webpack安装到全局-运行webpack命令"><a href="#webpack安装到全局-运行webpack命令" class="headerlink" title="webpack安装到全局(运行webpack命令)"></a>webpack安装到全局(运行webpack命令)</h2><pre><code>npm install webpack -g
 </code></pre><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>首先创建一个静态页面 index.html 和一个 JS 入口文件 entry.js：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// touch index.html</span><br><span class="line">&lt;!-- index.html --&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// touch entry.js</span><br><span class="line">document.write(&apos;It works.&apos;);</span><br></pre></td></tr></table></figure>            </p>
-<p>然后编译 entry.js 并打包到 bundle.js：<br>            webpack ./entry.js bundle.js</p>
-<p>直接打开index.html</p>
-<h3 id="添加模块"><a href="#添加模块" class="headerlink" title="添加模块"></a>添加模块</h3><p>添加一个模块 module.js 并修改入口 entry.js<br>            // touch module.js<br>            module.exports = ‘It works from module.js.’</p>
-<pre><code>// entry.js
+<p>然后编译 entry.js 并打包到 bundle.js：</p>
+<pre><code>webpack ./entry.js bundle.js
+</code></pre><p>直接打开index.html</p>
+<h3 id="添加模块"><a href="#添加模块" class="headerlink" title="添加模块"></a>添加模块</h3><p>添加一个模块 module.js 并修改入口 entry.js</p>
+<pre><code>// touch module.js
+module.exports = &apos;It works from module.js.&apos;
+
+// entry.js
 document.write(&apos;It works.&apos;)
 document.write(require(&apos;./module.js&apos;)) // 添加模块
 
@@ -338,8 +342,10 @@ document.write(require(&apos;./module.js&apos;))
 </code></pre><p>安装css loader</p>
 <pre><code>npm install css-loader style-loader --save-dev
 </code></pre><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 –config 选项来指定配置文件。</p>
-<p>然后创建一个配置文件 webpack.config.js：<br>            var webpack = require(‘webpack’)</p>
-<pre><code>module.exports = {
+<p>然后创建一个配置文件 webpack.config.js：</p>
+<pre><code>var webpack = require(&apos;webpack&apos;)
+
+module.exports = {
   entry: &apos;./entry.js&apos;,
   output: {
     path: __dirname,

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangkailang.github.io/"/>
-  <updated>2016-03-29T10:42:18.000Z</updated>
+  <updated>2016-03-29T10:43:51.000Z</updated>
   <id>http://wangkailang.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://wangkailang.github.io/2016/03/29/webpack%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/"/>
     <id>http://wangkailang.github.io/2016/03/29/webpack基础配置/</id>
     <published>2016-03-29T09:04:27.000Z</published>
-    <updated>2016-03-29T10:42:18.000Z</updated>
+    <updated>2016-03-29T10:43:51.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;源代码&quot;&gt;&lt;a href=&quot;#源代码&quot; class=&quot;headerlink&quot; title=&quot;源代码&quot;&gt;&lt;/a&gt;源代码&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/buildGoodWeb/webpack_collect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/buildGoodWeb/webpack_collect&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;启动&quot;&gt;&lt;a href=&quot;#启动&quot; class=&quot;headerlink&quot; title=&quot;启动&quot;&gt;&lt;/a&gt;启动&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm install
@@ -32,10 +32,14 @@ npm run start
 npm install webpack --save-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;webpack安装到全局-运行webpack命令&quot;&gt;&lt;a href=&quot;#webpack安装到全局-运行webpack命令&quot; class=&quot;headerlink&quot; title=&quot;webpack安装到全局(运行webpack命令)&quot;&gt;&lt;/a&gt;webpack安装到全局(运行webpack命令)&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;npm install webpack -g
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;使用&quot;&gt;&lt;a href=&quot;#使用&quot; class=&quot;headerlink&quot; title=&quot;使用&quot;&gt;&lt;/a&gt;使用&lt;/h2&gt;&lt;p&gt;首先创建一个静态页面 index.html 和一个 JS 入口文件 entry.js：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// touch index.html&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- index.html --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;lt;script src=&amp;quot;bundle.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;// touch entry.js&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;document.write(&amp;apos;It works.&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;            &lt;/p&gt;
-&lt;p&gt;然后编译 entry.js 并打包到 bundle.js：&lt;br&gt;            webpack ./entry.js bundle.js&lt;/p&gt;
-&lt;p&gt;直接打开index.html&lt;/p&gt;
-&lt;h3 id=&quot;添加模块&quot;&gt;&lt;a href=&quot;#添加模块&quot; class=&quot;headerlink&quot; title=&quot;添加模块&quot;&gt;&lt;/a&gt;添加模块&lt;/h3&gt;&lt;p&gt;添加一个模块 module.js 并修改入口 entry.js&lt;br&gt;            // touch module.js&lt;br&gt;            module.exports = ‘It works from module.js.’&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// entry.js
+&lt;p&gt;然后编译 entry.js 并打包到 bundle.js：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;webpack ./entry.js bundle.js
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;直接打开index.html&lt;/p&gt;
+&lt;h3 id=&quot;添加模块&quot;&gt;&lt;a href=&quot;#添加模块&quot; class=&quot;headerlink&quot; title=&quot;添加模块&quot;&gt;&lt;/a&gt;添加模块&lt;/h3&gt;&lt;p&gt;添加一个模块 module.js 并修改入口 entry.js&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// touch module.js
+module.exports = &amp;apos;It works from module.js.&amp;apos;
+
+// entry.js
 document.write(&amp;apos;It works.&amp;apos;)
 document.write(require(&amp;apos;./module.js&amp;apos;)) // 添加模块
 
@@ -60,8 +64,10 @@ document.write(require(&amp;apos;./module.js&amp;apos;))
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;安装css loader&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;npm install css-loader style-loader --save-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;配置文件&quot;&gt;&lt;a href=&quot;#配置文件&quot; class=&quot;headerlink&quot; title=&quot;配置文件&quot;&gt;&lt;/a&gt;配置文件&lt;/h2&gt;&lt;p&gt;Webpack 在执行的时候，除了在命令行传入参数，还可以通过指定的配置文件来执行。默认情况下，会搜索当前目录的 webpack.config.js 文件，这个文件是一个 node.js 模块，返回一个 json 格式的配置信息对象，或者通过 –config 选项来指定配置文件。&lt;/p&gt;
-&lt;p&gt;然后创建一个配置文件 webpack.config.js：&lt;br&gt;            var webpack = require(‘webpack’)&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;module.exports = {
+&lt;p&gt;然后创建一个配置文件 webpack.config.js：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var webpack = require(&amp;apos;webpack&amp;apos;)
+
+module.exports = {
   entry: &amp;apos;./entry.js&amp;apos;,
   output: {
     path: __dirname,
